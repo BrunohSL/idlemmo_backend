@@ -32,3 +32,15 @@ $factory->define(App\Users::class, function (Faker\Generator $faker) {
         'description' => $faker->text,
     ];
 });
+
+/**
+ * Factory definition for model App\Item.
+ */
+$factory->define(App\Item::class, function ($faker) {
+    return [
+        'name' => $faker->name,
+        'price' => $faker->price,
+        'type' => $faker->type,
+        'level' => $faker->level,
+    ];
+});
