@@ -37,7 +37,12 @@ class ItemsController extends Controller {
     }
 
     public function store(Request $request) {
+        $this->_item->create($request->all());
 
+        return response()
+            ->json(['data' => [
+                'message' => 'Item created!']
+            ]);
     }
 
     public function update(Request $request) {
