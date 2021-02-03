@@ -45,8 +45,17 @@ class ItemsController extends Controller {
             ]);
     }
 
-    public function update(Request $request) {
+    public function update($id, Request $request) {
+        $item = $this->_item->find($id);
 
+        $item->update($request->all());
+
+        return response()
+            ->json([
+                'data' => [
+                    'message' => 'Item updated!'
+                ]
+            ]);
     }
 
     public function destroy($id) {
