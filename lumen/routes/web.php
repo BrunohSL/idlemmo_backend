@@ -17,36 +17,36 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-/**
- * Routes for resource messages
- */
-$router->group(['prefix' => 'messages'], function () use ($router) {
-    $router->get('/', 'MessagesController@index');
-    $router->get('/{id}', 'MessagesController@show');
-    $router->get('/user/{id}', 'MessagesController@show_user_messages');
-    $router->post('/', 'MessagesController@store');
-    $router->put('/{id}', 'MessagesController@update');
-    $router->delete('/{id}', 'MessagesController@destroy');
-});
+// /**
+//  * Routes for resource messages
+//  */
+// $router->group(['prefix' => 'messages'], function () use ($router) {
+//     $router->get('/', 'MessagesController@index');
+//     $router->get('/{id}', 'MessagesController@show');
+//     $router->get('/user/{id}', 'MessagesController@show_user_messages');
+//     $router->post('/', 'MessagesController@store');
+//     $router->put('/{id}', 'MessagesController@update');
+//     $router->delete('/{id}', 'MessagesController@destroy');
+// });
 
-/**
- * Routes for resource users
- */
-$router->group(['prefix' => 'users'], function () use ($router) {
-    $router->get('/', 'UsersController@index');
-    $router->get('/{id}', 'UsersController@show');
-    $router->post('/', 'UsersController@store');
-    $router->put('/{id}', 'UsersController@update');
-    $router->delete('/{id}', 'UsersController@destroy');
-});
+// /**
+//  * Routes for resource users
+//  */
+// $router->group(['prefix' => 'users'], function () use ($router) {
+//     $router->get('/', 'UsersController@index');
+//     $router->get('/{id}', 'UsersController@show');
+//     $router->post('/', 'UsersController@store');
+//     $router->put('/{id}', 'UsersController@update');
+//     $router->delete('/{id}', 'UsersController@destroy');
+// });
 
 /**
  * Routes for resource item
  */
 $router->group(['prefix' => 'item'], function () use ($router) {
-    $router->get('', 'ItemsController@index');
-    $router->get('/{id}', 'ItemsController@show');
-    $router->post('', 'ItemsController@store');
+    $router->get('/index', 'ItemsController@index');
+    $router->get('/index/{id}', 'ItemsController@show');
+    $router->post('/store/{$id}', 'ItemsController@store');
     $router->put('/{id}', 'ItemsController@update');
-    $router->delete('/{id}', 'ItemsController@destroy');
+    $router->delete('/delete/{id}', 'ItemsController@destroy');
 });
