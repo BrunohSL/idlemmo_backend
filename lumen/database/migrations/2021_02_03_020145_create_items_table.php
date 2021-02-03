@@ -5,7 +5,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateItemsTable extends Migration {
     public function up() {
-        Schema::create('item', function(Blueprint $table) {
+        Schema::create('items', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 30);
             $table->string('price', 10);
@@ -17,6 +17,6 @@ class CreateItemsTable extends Migration {
     }
 
     public function down() {
-        Schema::drop('item');
+        Schema::drop('items');
     }
 }

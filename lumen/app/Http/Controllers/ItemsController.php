@@ -1,13 +1,24 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Item;
 
 class ItemsController extends Controller {
-    use RESTActions;
+    private $_item;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(Item $item) {
+        $this->_item = $item;
+    }
 
     public function index() {
-        $items = DB::table('item')
+        $items = DB::table('items')
             ->get();
 
         $items = \json_encode($items, true);
@@ -16,7 +27,7 @@ class ItemsController extends Controller {
     }
 
     public function show($id) {
-        $item = DB::table('item')
+        $item = DB::table('items')
             ->where('id', $id)
             ->get();
 
@@ -26,17 +37,23 @@ class ItemsController extends Controller {
     }
 
     public function store(Request $request) {
-        print_r("Aqui\n");
-        print_r($request);
-        // DB::table('users')->insert([
-        //     'name' => '',
-        //     'price' => 0,
-        //     'type' => 0,
-        //     'level' => 0,
-        // ]);
+
+    }
+
+    public function update(Request $request) {
+
     }
 
     public function destroy($id) {
-        DB::table('item')->where('id', $id)->delete();
+        $item = $this->_item->find($id);
+
+        $item->delete();
+
+        return response()
+            ->json([
+                'data' => [
+                    'message' => 'Item deleted!'
+                ]
+            ]);
     }
 }

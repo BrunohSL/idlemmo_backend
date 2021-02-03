@@ -46,7 +46,7 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'item'], function () use ($router) {
     $router->get('/index', 'ItemsController@index');
     $router->get('/index/{id}', 'ItemsController@show');
-    $router->post('/store/{$id}', 'ItemsController@store');
-    $router->put('/{id}', 'ItemsController@update');
+    $router->post('/store/{id}', 'ItemsController@store');
+    $router->put('/update/{id}', 'ItemsController@update');
     $router->delete('/delete/{id}', 'ItemsController@destroy');
 });
