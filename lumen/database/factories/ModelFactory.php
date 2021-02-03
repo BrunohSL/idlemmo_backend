@@ -11,40 +11,24 @@
 |
 */
 
-$factory->define(App\Users::class, function (Faker\Generator $faker) {
-    return [
-        'name' => $faker->name,
-        'lastname' => $faker->lastName,
-        'email' => $faker->email,
-        'telephone' => $faker->phoneNumber,
-    ];
-});
-
-/**
- * Factory definition for model App\Task.
- */
-$factory->define(App\Messages::class, function ($faker) {
-    $user = factory('App\Users')->create();
-
-    return [
-        'user_id' => $user['id'],
-        'description' => $faker->text,
-    ];
-});
 /**
  * Factory definition for model App\Messages.
  */
-$factory->define(App\Messages::class, function ($faker) {
+$factory->define(App\Messages::class, function (Faker\Generator $faker) {
     return [
-        // Fields here
+        'name' => $faker->name,
+        'lastname' => $faker->lastname,
+        'email' => $faker->email,
+        'telephone' => $faker->telephone,
     ];
 });
 
 /**
  * Factory definition for model App\Users.
  */
-$factory->define(App\Users::class, function ($faker) {
+$factory->define(App\Users::class, function (Faker\Generator $faker) {
     return [
-        // Fields here
+        'user_id' => $user['id'],
+        'description' => $faker->text,
     ];
 });
