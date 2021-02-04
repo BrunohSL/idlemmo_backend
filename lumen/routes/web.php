@@ -27,3 +27,14 @@ $router->group(['prefix' => 'item'], function () use ($router) {
     $router->put('/update/{id}', 'ItemsController@update');
     $router->delete('/delete/{id}', 'ItemsController@destroy');
 });
+
+/**
+ * Routes for resource player
+ */
+$router->group(['prefix' => 'player'], function () use ($router) {
+    $router->get('/index', 'PlayersController@index');
+    $router->get('index/{id}', 'PlayersController@show');
+    $router->post('/store', 'PlayersController@store');
+    $router->put('update/{id}', 'PlayersController@update');
+    $router->delete('delete/{id}', 'PlayersController@destroy');
+});

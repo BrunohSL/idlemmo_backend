@@ -22,3 +22,23 @@ $factory->define(App\Item::class, function ($faker) {
         'level' => $faker->level,
     ];
 });
+
+/**
+ * Factory definition for model App\Player.
+ */
+$factory->define(App\Player::class, function ($faker) {
+    return [
+        'name' => $faker->name,
+        'level' => $faker->level,
+        'max_hp' => $faker->max_hp,
+        'actual_hp' => $faker->actual_hp,
+        'max_xp' => $faker->max_xp,
+        'actual_xp' => $faker->actual_xp,
+        'strength' => $faker->strength,
+        'agility' => $faker->agility,
+        'inteligence' => $faker->inteligence,
+        'vitality' => $faker->vitality,
+        'attack' => $faker->attack,
+        'defense' => $faker->defense,
+    ];
+});
