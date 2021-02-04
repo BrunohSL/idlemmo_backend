@@ -9,7 +9,7 @@ class CreateItemsTable extends Migration {
             $table->increments('id');
             $table->string('name', 30);
             $table->integer('type_id')->unsigned();
-            $table->foreign('type_id')->references('id')->on('type')->onDelete('cascade');
+            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
             $table->integer('attack');
             $table->integer('defense');
             $table->integer('hp');
