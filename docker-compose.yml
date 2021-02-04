@@ -9,7 +9,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: lumen
+      MYSQL_DATABASE: idlemmo
 
   nginx:
     container_name: nginx
@@ -27,7 +27,7 @@ services:
     build: images/php
     volumes:
       - ./lumen:/var/www/html
-    working_dir: /var/www/html/app/public
+    working_dir: /var/www/html
     command: php-fpm
     links:
       - db:db
