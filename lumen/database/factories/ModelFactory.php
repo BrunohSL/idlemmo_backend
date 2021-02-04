@@ -17,7 +17,7 @@
 $factory->define(App\Item::class, function ($faker) {
     return [
         'name' => $faker->name,
-        'type' => $faker->type,
+        'type_id' => $faker->type_id,
         'attack' => $faker->attack,
         'defense' => $faker->defense,
         'hp' => $faker->hp,

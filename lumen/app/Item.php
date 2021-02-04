@@ -6,7 +6,7 @@ class Item extends Model {
     protected $fillable = [
         'id',
         'name',
-        'type',
+        'type_id',
         'attack',
         'defense',
         'hp',
@@ -16,7 +16,7 @@ class Item extends Model {
 
     public static $rules = [
         "name" => "required|max:30",
-        "type" => "required|numeric|exists:type,id",
+        "type_id" => "required|numeric|exists:type,id",
         "attack" => "required|numeric",
         "defense" => "required|numeric",
         "hp" => "required|numeric",

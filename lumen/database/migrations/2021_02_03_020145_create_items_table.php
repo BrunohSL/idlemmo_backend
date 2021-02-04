@@ -8,7 +8,8 @@ class CreateItemsTable extends Migration {
         Schema::create('items', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name', 30);
-            $table->string('type', 20);
+            $table->integer('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('type')->onDelete('cascade');
             $table->integer('attack');
             $table->integer('defense');
             $table->integer('hp');
