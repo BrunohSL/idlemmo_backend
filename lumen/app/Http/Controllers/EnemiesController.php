@@ -14,4 +14,13 @@ class EnemiesController extends Controller {
     public function __construct(Enemy $enemy) {
         $this->_enemy = $enemy;
     }
+
+    public function index() {
+        $enemies = DB::table('enemies')
+            ->get();
+
+        $enemies = \json_encode($enemies, true);
+
+        print_r($enemies);
+    }
 }

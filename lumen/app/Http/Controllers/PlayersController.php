@@ -14,4 +14,13 @@ class PlayersController extends Controller {
     public function __construct(Player $player) {
         $this->_player = $player;
     }
+
+    public function index() {
+        $players = DB::table('players')
+            ->get();
+
+        $players = \json_encode($players, true);
+
+        print_r($players);
+    }
 }
