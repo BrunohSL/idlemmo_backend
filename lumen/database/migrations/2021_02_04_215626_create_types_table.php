@@ -3,21 +3,17 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsTable extends Migration {
+class CreateEnemiesTable extends Migration {
     public function up() {
-        Schema::create('items', function(Blueprint $table) {
+        Schema::create('types', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 30);
-            $table->string('type', 20);
-            $table->integer('attack');
-            $table->integer('defense');
-            $table->integer('hp');
+            $table->string('type', 30);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 
     public function down() {
-        Schema::drop('items');
+        Schema::drop('types');
     }
 }

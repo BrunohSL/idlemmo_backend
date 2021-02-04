@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreatePlayersTable extends Migration {
     public function up() {
         Schema::create('players', function(Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name', 30);
             $table->integer('level');
             $table->integer('max_hp');

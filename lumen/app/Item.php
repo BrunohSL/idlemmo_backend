@@ -6,17 +6,23 @@ class Item extends Model {
     protected $fillable = [
         'id',
         'name',
-        'price',
         'type',
-        'level',
+        'attack',
+        'defense',
+        'hp',
         'created_at',
         'updated_at',
     ];
 
     public static $rules = [
         "name" => "required|max:30",
-        "price" => "required|max:10",
-        "type" => "required|max:20",
-        "level" => "required|numeric",
+        "type" => "required|numeric|exists:type,id",
+        "attack" => "required|numeric",
+        "defense" => "required|numeric",
+        "hp" => "required|numeric",
     ];
+
+    public function type() {
+        return $this->belongsTo("App\Type");
+    }
 }

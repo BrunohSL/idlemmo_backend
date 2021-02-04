@@ -17,9 +17,10 @@
 $factory->define(App\Item::class, function ($faker) {
     return [
         'name' => $faker->name,
-        'price' => $faker->price,
         'type' => $faker->type,
-        'level' => $faker->level,
+        'attack' => $faker->attack,
+        'defense' => $faker->defense,
+        'hp' => $faker->hp,
     ];
 });
 
@@ -55,5 +56,14 @@ $factory->define(App\Enemy::class, function ($faker) {
         'xp_yield' => $faker->xp_yield,
         'attack' => $faker->attack,
         'defense' => $faker->defense,
+    ];
+});
+
+/**
+ * Factory definition for model App\Type.
+ */
+$factory->define(App\Type::class, function ($faker) {
+    return [
+        'type' => $faker->name,
     ];
 });
