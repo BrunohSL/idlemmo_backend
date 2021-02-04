@@ -8,12 +8,12 @@ class CreateEnemiesTable extends Migration {
         Schema::create('enemies', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name', 30);
-            $table->int('level');
-            $table->int('max_hp');
-            $table->int('actual_hp');
-            $table->int('xp_yield');
-            $table->int('attack');
-            $table->int('defense');
+            $table->integer('level');
+            $table->integer('max_hp');
+            $table->integer('actual_hp');
+            $table->integer('xp_yield');
+            $table->integer('attack');
+            $table->integer('defense');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
