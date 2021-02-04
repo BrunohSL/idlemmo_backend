@@ -38,3 +38,14 @@ $router->group(['prefix' => 'player'], function () use ($router) {
     $router->put('update/{id}', 'PlayersController@update');
     $router->delete('delete/{id}', 'PlayersController@destroy');
 });
+
+/**
+ * Routes for resource enemy
+ */
+$router->group(['prefix' => 'enemy'], function () use ($router) {
+    $router->get('/index', 'EnemiesController@index');
+    $router->get('/index/{id}', 'EnemiesController@show');
+    $router->post('/store', 'EnemiesController@store');
+    $router->put('/update/{id}', 'EnemiesController@update');
+    $router->delete('/delete/{id}', 'EnemiesController@destroy');
+});

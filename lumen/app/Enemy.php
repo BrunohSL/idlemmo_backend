@@ -2,19 +2,14 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Player extends Model {
+class Enemy extends Model {
     protected $fillable = [
         "id",
         "name",
         "level",
         "max_hp",
         "actual_hp",
-        "max_xp",
-        "actual_xp",
-        "strength",
-        "agility",
-        "inteligence",
-        "vitality",
+        "xp_yield",
         "attack",
         "defense",
         "created_at",
@@ -26,12 +21,7 @@ class Player extends Model {
         "level" => "required",
         "max_hp" => "required",
         "actual_hp" => "required",
-        "max_xp" => "required",
-        "actual_xp" => "required",
-        "strength" => "required",
-        "agility" => "required",
-        "inteligence" => "required",
-        "vitality" => "required",
+        "xp_yield" => "required",
         "attack" => "required",
         "defense" => "required",
     ];

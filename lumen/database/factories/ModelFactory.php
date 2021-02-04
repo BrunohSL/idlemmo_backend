@@ -42,3 +42,18 @@ $factory->define(App\Player::class, function ($faker) {
         'defense' => $faker->defense,
     ];
 });
+
+/**
+ * Factory definition for model App\Enemy.
+ */
+$factory->define(App\Enemy::class, function ($faker) {
+    return [
+        'name' => $faker->name,
+        'level' => $faker->level,
+        'max_hp' => $faker->max_hp,
+        'actual_hp' => $faker->actual_hp,
+        'xp_yield' => $faker->xp_yield,
+        'attack' => $faker->attack,
+        'defense' => $faker->defense,
+    ];
+});
