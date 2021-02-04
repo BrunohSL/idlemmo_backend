@@ -17,10 +17,10 @@
 $factory->define(App\Item::class, function ($faker) {
     return [
         'name' => $faker->name,
-        'type_id' => $faker->type_id,
-        'attack' => $faker->attack,
-        'defense' => $faker->defense,
-        'hp' => $faker->hp,
+        'type_id' => $faker->rand(5),
+        'attack' => $faker->rand(15),
+        'defense' => $faker->rand(15),
+        'hp' => $faker->rand(15),
     ];
 });
 
@@ -30,17 +30,17 @@ $factory->define(App\Item::class, function ($faker) {
 $factory->define(App\Player::class, function ($faker) {
     return [
         'name' => $faker->name,
-        'level' => $faker->level,
-        'max_hp' => $faker->max_hp,
-        'actual_hp' => $faker->actual_hp,
-        'max_xp' => $faker->max_xp,
-        'actual_xp' => $faker->actual_xp,
-        'strength' => $faker->strength,
-        'agility' => $faker->agility,
-        'inteligence' => $faker->inteligence,
-        'vitality' => $faker->vitality,
-        'attack' => $faker->attack,
-        'defense' => $faker->defense,
+        'level' => $faker->rand(10),
+        'max_hp' => $faker->rand(100),
+        'actual_hp' => $faker->rand(100),
+        'max_xp' => $faker->rand(50),
+        'actual_xp' => $faker->rand(50),
+        'strength' => $faker->rand(20),
+        'agility' => $faker->rand(20),
+        'inteligence' => $faker->rand(20),
+        'vitality' => $faker->rand(20),
+        'attack' => $faker->rand(20),
+        'defense' => $faker->rand(20),
     ];
 });
 
@@ -50,12 +50,12 @@ $factory->define(App\Player::class, function ($faker) {
 $factory->define(App\Enemy::class, function ($faker) {
     return [
         'name' => $faker->name,
-        'level' => $faker->level,
-        'max_hp' => $faker->max_hp,
-        'actual_hp' => $faker->actual_hp,
-        'xp_yield' => $faker->xp_yield,
-        'attack' => $faker->attack,
-        'defense' => $faker->defense,
+        'level' => $faker->rand(10),
+        'max_hp' => $faker->rand(100),
+        'actual_hp' => $faker->rand(100),
+        'xp_yield' => $faker->rand(10),
+        'attack' => $faker->rand(10),
+        'defense' => $faker->rand(10),
     ];
 });
 

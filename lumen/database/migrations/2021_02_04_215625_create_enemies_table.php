@@ -17,6 +17,39 @@ class CreateEnemiesTable extends Migration {
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
+
+        // Insert some stuff
+        DB::table('enemies')->insert(
+            array(
+                array(
+                    'name' => 'Cat',
+                    'level' => 1,
+                    'max_hp' => 20,
+                    'actual_hp' => 20,
+                    'xp_yield' => 5,
+                    'attack' => 4,
+                    'defense' => 2,
+                ),
+                array(
+                    'name' => 'Gravekeeper',
+                    'level' => 3,
+                    'max_hp' => 50,
+                    'actual_hp' => 50,
+                    'xp_yield' => 10,
+                    'attack' => 8,
+                    'defense' => 5,
+                ),
+                array(
+                    'name' => 'General',
+                    'level' => 5,
+                    'max_hp' => 100,
+                    'actual_hp' => 100,
+                    'xp_yield' => 20,
+                    'attack' => 16,
+                    'defense' => 12,
+                ),
+            )
+        );
     }
 
     public function down() {
