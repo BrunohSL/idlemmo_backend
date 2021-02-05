@@ -11,6 +11,43 @@ class CreateTypesTable extends Migration {
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
+
+        DB::table('types')->insert(
+            array(
+                array(
+                    // 'id' => 1
+                    'type' => 'Weapon',
+                ),
+                array(
+                    // 'id' => 2
+                    'type' => 'Shield',
+                ),
+                array(
+                    // 'id' => 3
+                    'type' => 'Helmet',
+                ),
+                array(
+                    // 'id' => 4
+                    'type' => 'Armor',
+                ),
+                array(
+                    // 'id' => 5
+                    'type' => 'Gloves',
+                ),
+                array(
+                    // 'id' => 6
+                    'type' => 'Pants',
+                ),
+                array(
+                    // 'id' => 7
+                    'type' => 'Boots',
+                ),
+                array(
+                    // 'id' => 8
+                    'type' => 'Ring',
+                ),
+            )
+        );
     }
 
     public function down() {

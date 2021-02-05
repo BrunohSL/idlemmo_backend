@@ -22,6 +22,23 @@ class CreatePlayersTable extends Migration {
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
+
+        DB::table('players')->insert(
+            array(
+                'name' => 'Xurilambs',
+                'level' => 1,
+                'max_hp' => 30,
+                'actual_hp' => 30,
+                'max_xp' => 10,
+                'actual_xp' => 0,
+                'strength' => 0,
+                'agility' => 0,
+                'intelligence' => 0,
+                'vitality' => 0,
+                'attack' => 8,
+                'defense' => 5,
+            ),
+        );
     }
 
     public function down() {
