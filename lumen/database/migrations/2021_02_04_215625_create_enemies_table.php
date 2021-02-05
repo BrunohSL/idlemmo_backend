@@ -14,7 +14,7 @@ class CreateEnemiesTable extends Migration {
             $table->integer('xp_yield');
             $table->integer('attack');
             $table->integer('defense');
-            $table->string('defense', 20);
+            $table->string('sprite', 20);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
