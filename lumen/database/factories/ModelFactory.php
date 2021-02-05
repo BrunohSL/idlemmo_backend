@@ -56,6 +56,7 @@ $factory->define(App\Enemy::class, function ($faker) {
         'xp_yield' => $faker->rand(10),
         'attack' => $faker->rand(10),
         'defense' => $faker->rand(10),
+        'sprite' => $faker->name,
     ];
 });
 

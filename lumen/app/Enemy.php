@@ -12,6 +12,7 @@ class Enemy extends Model {
         "xp_yield",
         "attack",
         "defense",
+        "sprite"
         "created_at",
         "updated_at",
     ];
@@ -24,5 +25,6 @@ class Enemy extends Model {
         "xp_yield" => "required",
         "attack" => "required",
         "defense" => "required",
+        "sprite" => "required",
     ];
 }

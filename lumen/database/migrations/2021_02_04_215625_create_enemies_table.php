@@ -14,6 +14,7 @@ class CreateEnemiesTable extends Migration {
             $table->integer('xp_yield');
             $table->integer('attack');
             $table->integer('defense');
+            $table->string('defense', 20);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
@@ -28,6 +29,7 @@ class CreateEnemiesTable extends Migration {
                     'xp_yield' => 5,
                     'attack' => 4,
                     'defense' => 2,
+                    'sprite' => 'cat1'
                 ),
                 array(
                     'name' => 'Gravekeeper',
@@ -37,6 +39,7 @@ class CreateEnemiesTable extends Migration {
                     'xp_yield' => 10,
                     'attack' => 8,
                     'defense' => 5,
+                    'sprite' => 'gravekeeper1'
                 ),
                 array(
                     'name' => 'General',
@@ -46,6 +49,7 @@ class CreateEnemiesTable extends Migration {
                     'xp_yield' => 20,
                     'attack' => 16,
                     'defense' => 12,
+                    'sprite' => 'governor'
                 ),
             )
         );
