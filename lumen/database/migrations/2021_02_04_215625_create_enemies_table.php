@@ -7,11 +7,11 @@ class CreateEnemiesTable extends Migration {
     public function up() {
         Schema::create('enemies', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 30);
+            $table->string('characterName', 30);
             $table->integer('level');
-            $table->integer('max_hp');
-            $table->integer('actual_hp');
-            $table->integer('xp_yield');
+            $table->integer('maxHp');
+            $table->integer('currentHp');
+            $table->integer('xpYield');
             $table->integer('attack');
             $table->integer('defense');
             $table->string('sprite', 20);
@@ -22,31 +22,31 @@ class CreateEnemiesTable extends Migration {
         DB::table('enemies')->insert(
             array(
                 array(
-                    'name' => 'Cat',
+                    'characterName' => 'Cat',
                     'level' => 1,
-                    'max_hp' => 20,
-                    'actual_hp' => 20,
-                    'xp_yield' => 5,
+                    'maxHp' => 20,
+                    'currentHp' => 20,
+                    'xpYield' => 5,
                     'attack' => 4,
                     'defense' => 2,
                     'sprite' => 'cat1'
                 ),
                 array(
-                    'name' => 'Gravekeeper',
+                    'characterName' => 'Gravekeeper',
                     'level' => 3,
-                    'max_hp' => 50,
-                    'actual_hp' => 50,
-                    'xp_yield' => 10,
+                    'maxHp' => 50,
+                    'currentHp' => 50,
+                    'xpYield' => 10,
                     'attack' => 8,
                     'defense' => 5,
                     'sprite' => 'gravekeeper1'
                 ),
                 array(
-                    'name' => 'General',
+                    'characterName' => 'General',
                     'level' => 5,
-                    'max_hp' => 100,
-                    'actual_hp' => 100,
-                    'xp_yield' => 20,
+                    'maxHp' => 100,
+                    'currentHp' => 100,
+                    'xpYield' => 20,
                     'attack' => 16,
                     'defense' => 12,
                     'sprite' => 'governor'

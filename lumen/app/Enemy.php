@@ -5,24 +5,24 @@ use Illuminate\Database\Eloquent\Model;
 class Enemy extends Model {
     protected $fillable = [
         "id",
-        "name",
+        "characterName",
         "level",
-        "max_hp",
-        "actual_hp",
-        "xp_yield",
+        "maxHp",
+        "currentHp",
+        "xpYield",
         "attack",
         "defense",
-        "sprite"
+        "sprite",
         "created_at",
         "updated_at",
     ];
 
     public static $rules = [
-        "name" => "required",
+        "characterName" => "required",
         "level" => "required",
-        "max_hp" => "required",
-        "actual_hp" => "required",
-        "xp_yield" => "required",
+        "maxHp" => "required",
+        "currentHp" => "required",
+        "xpYield" => "required",
         "attack" => "required",
         "defense" => "required",
         "sprite" => "required",

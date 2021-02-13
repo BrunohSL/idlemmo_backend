@@ -20,20 +20,18 @@ class EnemiesController extends Controller {
         $enemies = DB::table('enemies')
             ->get();
 
-        // $enemies = \json_encode($enemies, true);
-
         return response()
             ->json($enemies);
     }
 
     public function show($id) {
-        $enemies = DB::table('enemies')
+        $enemy = DB::table('enemies')
             ->where('id', $id)
             ->get();
 
         // $enemies = \json_encode($enemies, true);
 
         return response()
-            ->json($enemies);
+            ->json($enemy);
     }
 }

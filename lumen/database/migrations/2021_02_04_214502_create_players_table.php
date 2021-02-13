@@ -7,36 +7,38 @@ class CreatePlayersTable extends Migration {
     public function up() {
         Schema::create('players', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 30);
+            $table->string('characterName', 30);
             $table->integer('level');
-            $table->integer('max_hp');
-            $table->integer('actual_hp');
-            $table->integer('max_xp');
-            $table->integer('actual_xp');
+            $table->integer('maxHp');
+            $table->integer('currentHp');
+            $table->integer('maxXp');
+            $table->integer('currentXp');
             $table->integer('strength');
             $table->integer('agility');
             $table->integer('intelligence');
             $table->integer('vitality');
             $table->integer('attack');
             $table->integer('defense');
+            $table->string('sprite');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
 
         DB::table('players')->insert(
             array(
-                'name' => 'Xurilambs',
+                'characterName' => 'Xurilambs',
                 'level' => 1,
-                'max_hp' => 30,
-                'actual_hp' => 30,
-                'max_xp' => 10,
-                'actual_xp' => 0,
+                'maxHp' => 30,
+                'currentHp' => 30,
+                'maxXp' => 10,
+                'currentXp' => 0,
                 'strength' => 0,
                 'agility' => 0,
                 'intelligence' => 0,
                 'vitality' => 0,
                 'attack' => 8,
                 'defense' => 5,
+                'sprite' => "player",
             ),
         );
     }

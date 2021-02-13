@@ -24,4 +24,15 @@ class PlayersController extends Controller {
 
         print_r($players);
     }
+
+    public function show($id) {
+        $player = DB::table('players')
+            ->where('id', $id)
+            ->get();
+
+        // $enemies = \json_encode($enemies, true);
+
+        return response()
+            ->json($player);
+    }
 }
