@@ -20,9 +20,8 @@ class PlayersController extends Controller {
         $players = DB::table('players')
             ->get();
 
-        $players = \json_encode($players, true);
-
-        print_r($players);
+        return response()
+            ->json($players);
     }
 
     public function show($id) {
@@ -30,9 +29,42 @@ class PlayersController extends Controller {
             ->where('id', $id)
             ->get();
 
-        // $enemies = \json_encode($enemies, true);
-
         return response()
             ->json($player);
+    }
+
+    public function store(Request $request) {
+        $this->_player->create($request->all());
+
+        return response()
+            ->json(['data' => [
+                'message' => 'Player created!']
+            ]);
+    }
+
+    public function update($id, Request $request) {
+        $item = $this->_player->find($id);
+
+        $item->update($request->all());
+
+        return response()
+            ->json([
+                'data' => [
+                    'message' => 'Player updated!'
+                ]
+            ]);
+    }
+
+    public function destroy($id) {
+        $item = $this->_player->find($id);
+
+        $item->delete();
+
+        return response()
+            ->json([
+                'data' => [
+                    'message' => 'Player deleted!'
+                ]
+            ]);
     }
 }
