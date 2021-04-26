@@ -14,6 +14,7 @@ Acessar docker e rodar as migrations
 
 
 Criar controller, model e os caraio
+
     - php artisan wn:resource messages "user_id;integer;unsigned;required; description;text;required;" --add=timestamps
 
 Config não lembro de onde
